@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Generator";
+}
+
+<div class="text-center">
+    <h2>Welcome, @ViewBag.Username from @ViewBag.Location</h2>
+    <h2>Here is your randomly generated passcode:</h2>
+    <h1 class="passcode">@ViewBag.Passcode</h1>
+    <div class="d-flex mx-auto w-25 justify-content-center">
+        <form asp-action="Logout" asp-controller="Home" method="post">
+            <label>Not you?</label>
+            <input type="submit" value="Log out" class="btn btn-danger">
+        </form>
+        <form asp-action="GenerateNew" asp-controller="Home" method="post">
+            <label>Want a new code?</label>
+            <input type="submit" value="New code" class="btn btn-info">
+        </form>
+    </div>
+</div>
